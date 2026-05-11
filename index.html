@@ -1,12 +1,75 @@
 <html>
   <head>
-훌랄라라 제주도 가고 싶어라
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 KOSPI 지수 대시보드</title>
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #131722;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        /* 위젯 영역 스타일 */
+        #tradingview_widget {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
 
-    <body>
-      안녕하세요 완컷의 홈페이지 입니다
-      아 설계제도 시간 너무 싫다.
-      이것만 없어도 진짜 해피 학교 생활인데
+    <div class="container">
+        <h1>📈 국내 증시 실시간 현황</h1>
+        
+        <!-- TradingView 위젯 시작 -->
+        <div id="tradingview_widget">
+            <div class="tradingview-widget-container">
+                <div id="tradingview_kospi"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget(
+                {
+                    "autosize": true,
+                    "symbol": "KRX:KOSPI",
+                    "interval": "D",
+                    "timezone": "Asia/Seoul",
+                    "theme": "dark",
+                    "style": "3",
+                    "locale": "ko",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_kospi"
+                }
+                );
+                </script>
+            </div>
+        </div>
+        <p style="margin-top: 20px; color: #848e9c; font-size: 0.9em;">
+            데이터 제공: TradingView (실시간 또는 20분 지연 데이터)
+        </p>
+    </div>
 
-      지금 주식시장은 버블인가 아님 실적 바탕 건강한 상승인가
-    </body>
+</body>
+</html>
   </head>
