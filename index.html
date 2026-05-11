@@ -1,75 +1,20 @@
-<html>
-  <head>
+<!-- index.html 요약 구조 -->
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실시간 KOSPI 지수 대시보드</title>
-    <style>
-        body {
-            font-family: 'Pretendard', -apple-system, sans-serif;
-            background-color: #131722;
-            color: #ffffff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        /* 위젯 영역 스타일 */
-        #tradingview_widget {
-            height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-    </style>
-</head>
+<html>
 <body>
+    <h1>쓰레기 분리배출 AI 가이드</h1>
+    <input type="file" id="imageInput" accept="image/*" capture="camera">
+    <button onclick="analyzeImage()">분석하기</button>
+    <div id="result">결과가 여기 표시됩니다.</div>
 
-    <div class="container">
-        <h1>📈 국내 증시 실시간 현황</h1>
-        
-        <!-- TradingView 위젯 시작 -->
-        <div id="tradingview_widget">
-            <div class="tradingview-widget-container">
-                <div id="tradingview_kospi"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                new TradingView.widget(
-                {
-                    "autosize": true,
-                    "symbol": "KRX:KOSPI",
-                    "interval": "D",
-                    "timezone": "Asia/Seoul",
-                    "theme": "dark",
-                    "style": "3",
-                    "locale": "ko",
-                    "toolbar_bg": "#f1f3f6",
-                    "enable_publishing": false,
-                    "allow_symbol_change": true,
-                    "container_id": "tradingview_kospi"
-                }
-                );
-                </script>
-            </div>
-        </div>
-        <p style="margin-top: 20px; color: #848e9c; font-size: 0.9em;">
-            데이터 제공: TradingView (실시간 또는 20분 지연 데이터)
-        </p>
-    </div>
-
+    <script>
+        async function analyzeImage() {
+            const file = document.getElementById('imageInput').files[0];
+            // 1. 이미지를 Base64로 변환
+            // 2. Gemini API 호출 (API KEY 필요)
+            // 3. "이 물체의 분리배출 방법을 알려줘"라는 프롬프트와 함께 전송
+            // 4. 결과를 'result' div에 출력
+        }
+    </script>
 </body>
 </html>
-  </head>
